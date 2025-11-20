@@ -39,10 +39,10 @@ An end-to-end solution using the POTTER (POoling aTtention TransformER) architec
 ## Project Structure
 
 ```
-Project-8-3D-Hand-Pose-Estimation/
+3D-Hand-Pose-Estimation/
 │
-├── CIS_5810_Project_8_1_v3/          # Part 1: 2D-to-3D Lifting
-│   ├── CIS_5810_Project_8_1.ipynb   # Main training notebook
+├── pose_transformer/                 # Part 1: 2D-to-3D Lifting
+│   ├── pose_transformer.ipynb        # Main training notebook
 │   ├── dataset/
 │   │   ├── dataset.py                # Dataset loader and preprocessor
 │   │   └── data_vis.py               # 2D/3D visualization utilities
@@ -53,8 +53,8 @@ Project-8-3D-Hand-Pose-Estimation/
 │   │   └── loss.py                   # Loss functions and metrics
 │   └── output/                       # Trained model checkpoints
 │
-├── CIS_5810_Project_8-2-v3/          # Part 2: Image-to-3D with POTTER
-│   ├── CIS_5810_Project_8_2.ipynb   # Main training notebook
+├── potter_architecture/              # Part 2: Image-to-3D with POTTER
+│   ├── potter_pose_estimation.ipynb  # Main training notebook
 │   ├── configs/
 │   │   └── potter_pose_3d_ego4d.yaml # Model configuration
 │   ├── dataset/
@@ -131,7 +131,7 @@ pip install torch torchvision numpy matplotlib opencv-python tqdm easydict wandb
 
 For Part 2:
 ```bash
-cd CIS_5810_Project_8-2-v3
+cd potter_architecture
 pip install -r requirement.txt
 ```
 
@@ -155,7 +155,7 @@ wandb login
 
 1. **Open the notebook**:
 ```bash
-jupyter notebook CIS_5810_Project_8_1_v3/CIS_5810_Project_8_1.ipynb
+jupyter notebook pose_transformer/pose_transformer.ipynb
 ```
 
 2. **Configure paths**: Update `data_root_path` to point to your annotation directory
@@ -171,7 +171,7 @@ jupyter notebook CIS_5810_Project_8_1_v3/CIS_5810_Project_8_1.ipynb
 
 1. **Open the notebook**:
 ```bash
-jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
+jupyter notebook potter_architecture/potter_pose_estimation.ipynb
 ```
 
 2. **Configure paths**: Update the `cfg` dictionary with:
@@ -192,7 +192,7 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
 
 ### Part 1: PoseTransformer
 
-![PoseTransformer Architecture](CIS_5810_Project_8_1_v3/imgs/model.png)
+![PoseTransformer Architecture](pose_transformer/imgs/model.png)
 
 **Architecture Components**:
 - **Input Embedding**: Linear projection of 2D keypoints (21, 2) → (21, D)
@@ -214,7 +214,7 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
 
 ### Part 2: POTTER (POoling aTtention TransformER)
 
-![POTTER Architecture](CIS_5810_Project_8-2-v3/imgs/POTTER_arch.png)
+![POTTER Architecture](potter_architecture/imgs/POTTER_arch.png)
 
 **Two-Stage Architecture**:
 
@@ -230,7 +230,7 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
 
 **Core Innovation - Pooling Attention Block (PAT)**:
 
-![Pooling Attention Details](CIS_5810_Project_8-2-v3/imgs/PAT.png)
+![Pooling Attention Details](potter_architecture/imgs/PAT.png)
 
 Traditional self-attention has O(N²) complexity. PAT reduces this through:
 
@@ -251,7 +251,7 @@ Traditional self-attention has O(N²) complexity. PAT reduces this through:
 
 **Comparison of Transformer Architectures**:
 
-![Transformer Block Comparison](CIS_5810_Project_8-2-v3/imgs/transformer_blocks.png)
+![Transformer Block Comparison](potter_architecture/imgs/transformer_blocks.png)
 
 The figure above shows the evolution from standard attention-based transformers (ViT, Swin) to MLP-based mixers, and finally to POTTER's Pooling Attention design, which combines efficiency with effectiveness.
 
@@ -305,7 +305,7 @@ Model performance on test set: MPJPE: 22.85 (mm) PA-MPJPE: 7.53 (mm)
 
 ### Hand Joint Topology
 
-![Hand Joint Structure](CIS_5810_Project_8_1_v3/imgs/hand_index.png)
+![Hand Joint Structure](pose_transformer/imgs/hand_index.png)
 
 The model predicts 21 keypoints per hand following this structure:
 - **Index 0**: Wrist (root joint)

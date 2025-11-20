@@ -1,0 +1,10 @@
+tqdm
+opencv-python
+imageio
+numpy
+matplotlib
+easydict
+torch
+torchvision
+timm==0.6.13
+wandb

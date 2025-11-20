@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Virtual Environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model weights and checkpoints (too large for git)
+*.pth
+*.pth.tar
+*.tar
+*.pt
+*.ckpt
+output/
+*.h5
+*.pkl
+*.pickle
+
+# Dataset files (too large for git)
+*.json
+img_dir/
+part1data/
+part2data/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+
+# Keep small images for documentation
+!imgs/*.png
+!imgs/*.jpg
+!CIS_5810_Project_8_1_v3/imgs/*.png
+!CIS_5810_Project_8-2-v3/imgs/*.png
+
+# Wandb
+wandb/
+*.wandb
+
+# Logs
+*.log
+logs/
+*.out
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+

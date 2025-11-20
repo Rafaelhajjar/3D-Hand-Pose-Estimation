@@ -216,6 +216,9 @@ jupyter notebook potter_architecture/potter_pose_estimation.ipynb
 
 ### Part 2: POTTER (POoling aTtention TransformER)
 
+> **Reference**: [POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery](https://arxiv.org/abs/2311.18259)  
+> Li, Ce and Lee, Gim Hee. *arXiv preprint arXiv:2311.18259*, 2023.
+
 ![POTTER Architecture](potter_architecture/imgs/POTTER_arch.png)
 
 **Two-Stage Architecture**:
@@ -381,19 +384,25 @@ The visualization:
 
 ## Citation
 
-If you use this code or the Ego-Exo4D dataset, please cite the original papers:
-
-**Ego-Exo4D Dataset**:
-```
-(Add appropriate citation when published)
-```
+If you use this code or the datasets/architectures, please cite the original papers:
 
 **POTTER Architecture**:
 ```bibtex
-@article{potter2024,
-  title={POTTER: Pooling Attention Transformer for Efficient Human Pose Estimation},
-  author={...},
-  journal={...},
+@article{li2023potter,
+  title={POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery},
+  author={Li, Ce and Lee, Gim Hee},
+  journal={arXiv preprint arXiv:2311.18259},
+  year={2023},
+  url={https://arxiv.org/abs/2311.18259}
+}
+```
+
+**Ego-Exo4D Dataset**:
+```bibtex
+@inproceedings{ego-exo4d,
+  title={Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives},
+  author={Grauman, Kristen and Westbury, Andrew and others},
+  booktitle={CVPR},
   year={2024}
 }
 ```
@@ -408,9 +417,10 @@ This project is for educational purposes. Please refer to the original dataset a
 
 ## Acknowledgments
 
-- Dataset: Ego-Exo4D team
-- Architecture inspiration: Vision Transformer (ViT) and POTTER
-- PyTorch and the open-source computer vision community
+- **POTTER Architecture**: Based on [Li & Lee (2023)](https://arxiv.org/abs/2311.18259)
+- **Dataset**: Ego-Exo4D team
+- **Architecture Inspiration**: Vision Transformer (ViT)
+- **Framework**: PyTorch and the open-source computer vision community
 
 ---
 

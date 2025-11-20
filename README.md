@@ -192,6 +192,8 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
 
 ### Part 1: PoseTransformer
 
+![PoseTransformer Architecture](CIS_5810_Project_8_1_v3/imgs/model.png)
+
 **Architecture Components**:
 - **Input Embedding**: Linear projection of 2D keypoints (21, 2) → (21, D)
 - **Positional Encoding**: Added to preserve spatial relationships
@@ -212,6 +214,8 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
 
 ### Part 2: POTTER (POoling aTtention TransformER)
 
+![POTTER Architecture](CIS_5810_Project_8-2-v3/imgs/POTTER_arch.png)
+
 **Two-Stage Architecture**:
 
 1. **Basic Stream** (Hierarchical feature extraction):
@@ -225,6 +229,8 @@ jupyter notebook CIS_5810_Project_8-2-v3/CIS_5810_Project_8_2.ipynb
    - Preserves fine-grained spatial details
 
 **Core Innovation - Pooling Attention Block (PAT)**:
+
+![Pooling Attention Details](CIS_5810_Project_8-2-v3/imgs/PAT.png)
 
 Traditional self-attention has O(N²) complexity. PAT reduces this through:
 
@@ -242,6 +248,12 @@ Traditional self-attention has O(N²) complexity. PAT reduces this through:
 - Better scaling to high-resolution images
 - Hierarchical feature learning
 - More efficient for dense prediction tasks
+
+**Comparison of Transformer Architectures**:
+
+![Transformer Block Comparison](CIS_5810_Project_8-2-v3/imgs/transformer_blocks.png)
+
+The figure above shows the evolution from standard attention-based transformers (ViT, Swin) to MLP-based mixers, and finally to POTTER's Pooling Attention design, which combines efficiency with effectiveness.
 
 ---
 
@@ -292,6 +304,8 @@ Model performance on test set: MPJPE: 22.85 (mm) PA-MPJPE: 7.53 (mm)
 ## Technical Details
 
 ### Hand Joint Topology
+
+![Hand Joint Structure](CIS_5810_Project_8_1_v3/imgs/hand_index.png)
 
 The model predicts 21 keypoints per hand following this structure:
 - **Index 0**: Wrist (root joint)

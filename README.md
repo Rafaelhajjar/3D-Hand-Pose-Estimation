@@ -125,7 +125,7 @@ This project uses the **Ego-Exo4D** dataset, which contains egocentric video rec
 
 For Part 1:
 ```bash
-cd CIS_5810_Project_8_1_v3
+cd pose_transformer
 pip install torch torchvision numpy matplotlib opencv-python tqdm easydict wandb
 ```
 
@@ -136,8 +136,10 @@ pip install -r requirement.txt
 ```
 
 3. **Download the dataset**:
-   - Part 1: Download annotation files from the provided link
-   - Part 2: Download annotations and images (can reuse images from Project 7 if available)
+   - Download Ego-Exo4D annotation JSON files
+   - Download corresponding RGB images
+   - Place annotations in the project root directory
+   - Place images in `img_dir/` with train/val/test splits
 
 4. **Download pretrained weights** (Part 2 only):
    - Download POTTER classification pretrained weights for transfer learning
@@ -406,9 +408,9 @@ This project is for educational purposes. Please refer to the original dataset a
 
 ## Acknowledgments
 
-- Course: CIS 5810 - Computer Vision
 - Dataset: Ego-Exo4D team
 - Architecture inspiration: Vision Transformer (ViT) and POTTER
+- PyTorch and the open-source computer vision community
 
 ---
 
@@ -428,7 +430,10 @@ This project is for educational purposes. Please refer to the original dataset a
 **Issue**: Poor performance
 - **Solution**: Check data preprocessing, ensure pretrained weights loaded correctly (Part 2)
 
-### Contact
+### Support
 
-For questions or issues, please refer to course materials or office hours.
+For questions or issues:
+- Check the documentation in the notebooks
+- Review the troubleshooting section above
+- Open an issue on the GitHub repository
 
